@@ -8,7 +8,7 @@ From this directory, run `python3 -m http.server 8000` and open `http://localhos
 
 ## Configure enquiries
 
-Set `contact.email` and/or `contact.whatsapp` at the top of `script.js` before publishing. Without either value, the page transparently says that the sales contact is pending; it does not claim to send an enquiry.
+The sales email is set to `gvinteir@gmail.com` in `script.js`, and is also shown in the contact section. Change both places together if the sales address changes. Optionally add `contact.whatsapp` at the top of `script.js`.
 
 `contact.whatsapp` should be an international number with digits only, without `+` or spaces.
 

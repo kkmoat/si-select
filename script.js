@@ -1,6 +1,5 @@
-// Add a sales channel before publishing enquiries.
 const contact = {
-  email: "",
+  email: "gvinteir@gmail.com",
   whatsapp: "", // International digits only, for example 38640123456.
 };
 
@@ -20,6 +19,8 @@ const dialog = document.getElementById("enquiry-dialog");
 const dialogDomain = document.getElementById("dialog-domain");
 const dialogActions = document.getElementById("dialog-actions");
 const dialogNote = document.getElementById("dialog-note");
+const pointerIsFine = window.matchMedia("(hover: hover) and (pointer: fine)");
+const cursor = document.getElementById("site-cursor");
 let currentDomain = "";
 
 grid.innerHTML = domains.map((name, index) => {
@@ -82,6 +83,7 @@ function openEnquiry(domain = "") {
   dialogNote.textContent = contact.email || contact.whatsapp
     ? "Your email or messaging app will open. No message is sent automatically."
     : "The sales contact is being set up. Enquiries cannot be sent from this page yet.";
+  if (cursor && pointerIsFine.matches) dialog.append(cursor);
   dialog.showModal();
 }
 
@@ -93,4 +95,22 @@ document.getElementById("header-enquiry").addEventListener("click", () => openEn
 document.getElementById("general-enquiry").addEventListener("click", () => openEnquiry());
 document.getElementById("dialog-close").addEventListener("click", () => dialog.close());
 dialog.addEventListener("click", (event) => { if (event.target === dialog) dialog.close(); });
+dialog.addEventListener("close", () => { if (cursor) document.body.append(cursor); });
 document.getElementById("year").textContent = new Date().getFullYear();
+
+if (cursor) {
+  document.addEventListener("pointermove", (event) => {
+    if (!pointerIsFine.matches) return;
+    cursor.style.transform = `translate3d(${event.clientX}px, ${event.clientY}px, 0) translate(-50%, -50%)`;
+    cursor.classList.add("is-visible");
+    cursor.classList.toggle("is-active", event.target instanceof Element && event.target.closest("a, button") !== null);
+  }, { passive: true });
+  const hideCursor = () => cursor.classList.remove("is-visible");
+  document.addEventListener("pointerleave", hideCursor);
+  window.addEventListener("blur", hideCursor);
+  pointerIsFine.addEventListener("change", () => {
+    document.documentElement.classList.toggle("cursor-enabled", pointerIsFine.matches);
+    hideCursor();
+  });
+  document.documentElement.classList.toggle("cursor-enabled", pointerIsFine.matches);
+}
