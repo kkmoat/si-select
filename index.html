@@ -4,136 +4,69 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#f5f4ef" />
-    <meta name="description" content="Explore eight curated .si domains available for acquisition. Find a name that fits and enquire directly with the owner." />
+    <meta name="description" content="Eight distinctive .si domains available for acquisition. View the complete collection and enquire directly with the owner." />
     <meta property="og:title" content="SI Select — Curated .si Domains" />
-    <meta property="og:description" content="Eight distinctive .si domains, ready for their next chapter." />
+    <meta property="og:description" content="Eight distinctive .si domains, one curated collection." />
     <title>SI Select — Curated .si Domains</title>
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <link rel="stylesheet" href="./styles.css" />
     <script src="./script.js" defer></script>
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+    <a class="skip-link" href="#main">Skip to domains</a>
 
     <header class="site-header">
       <div class="container header-inner">
-        <a class="brand" href="#top" aria-label="SI Select, back to top">
+        <a class="brand" href="#main" aria-label="SI Select, view domains">
           <span class="brand-icon" aria-hidden="true">si<span>.</span></span>
           <span class="brand-name">SELECT</span>
         </a>
-        <nav class="site-nav" aria-label="Main navigation">
-          <a href="#domains">Domains</a>
-          <a href="#how-it-works">How it works</a>
-          <a class="nav-contact" href="#contact">Get in touch <span aria-hidden="true">↗</span></a>
-        </nav>
+        <span class="header-caption">A CURATED .SI PORTFOLIO</span>
+        <button class="header-contact" id="header-enquiry" type="button">Get in touch <span aria-hidden="true">↗</span></button>
       </div>
     </header>
 
-    <main id="main">
-      <section class="hero" id="top" aria-labelledby="hero-title">
-        <div class="container hero-inner">
-          <div class="hero-copy">
-            <div class="eyebrow"><span class="eyebrow-dot"></span> An independent .si portfolio</div>
-            <h1 id="hero-title">A good name<br />changes <span>everything.</span></h1>
-            <p>Eight distinctive .si domains are available for acquisition. Explore the collection and start a conversation about the one that fits.</p>
-            <a class="button button-primary" href="#domains">Explore domains <span aria-hidden="true">↘</span></a>
-          </div>
-          <div class="hero-visual" aria-hidden="true">
-            <span class="visual-orbit orbit-one"></span>
-            <span class="visual-orbit orbit-two"></span>
-            <span class="visual-orbit orbit-three"></span>
-            <span class="visual-marker marker-one"></span>
-            <span class="visual-marker marker-two"></span>
-            <span class="visual-label label-top">A name for what’s next</span>
-            <span class="visual-domain">.si</span>
-            <span class="visual-label label-bottom">Short. Distinctive. Yours.</span>
-          </div>
+    <main class="container main-content" id="main">
+      <section class="intro" aria-labelledby="intro-title">
+        <div>
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> ALL EIGHT NAMES, IN ONE PLACE</p>
+          <h1 id="intro-title">Find your next <span>.si</span></h1>
+          <p class="intro-copy">Owner-held domains available for acquisition. Choose a name and enquire about pricing and transfer.</p>
         </div>
-        <div class="container hero-meta">
-          <span>01 / CURATED NAMES</span>
-          <span>SCROLL TO EXPLORE <span aria-hidden="true">↓</span></span>
-        </div>
+        <div class="collection-count" aria-label="Eight domains available"><strong>08</strong><span>DOMAINS<br />FOR SALE</span></div>
       </section>
 
-      <section class="catalog section" id="domains" aria-labelledby="domains-title">
-        <div class="container">
-          <div class="section-heading">
-            <div>
-              <p class="section-kicker">THE COLLECTION</p>
-              <h2 id="domains-title">Available domains<span class="heading-period">.</span></h2>
-            </div>
-            <p>Every name in this collection is currently offered for sale. Availability is confirmed when you enquire.</p>
-          </div>
-
-          <div class="catalog-toolbar">
-            <label class="search-field" for="domain-search">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg>
-              <input id="domain-search" type="search" placeholder="Search domains" autocomplete="off" />
-              <span class="search-shortcut" aria-hidden="true">⌘ K</span>
-            </label>
-            <div class="filters" role="group" aria-label="Filter domains">
-              <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">All <span>08</span></button>
-              <button class="filter-button" type="button" data-filter="short" aria-pressed="false">Short names</button>
-              <button class="filter-button" type="button" data-filter="commerce" aria-pressed="false">Finance &amp; commerce</button>
-            </div>
-          </div>
-
-          <div class="results-line" aria-live="polite"><span id="result-count">Showing 8 domains</span><span>Alphabetical order</span></div>
-          <div class="domain-grid" id="domain-grid"></div>
-          <div class="empty-state" id="empty-state" hidden>
-            <div class="empty-icon" aria-hidden="true">.si</div>
-            <h3>No matching domains</h3>
-            <p>Try a different search or view the full collection.</p>
-            <button class="text-button" id="clear-filters" type="button">Show all domains <span aria-hidden="true">↗</span></button>
-          </div>
+      <section class="collection" aria-labelledby="collection-title">
+        <div class="collection-heading">
+          <h2 id="collection-title">The collection</h2>
+          <span>ALPHABETICAL ORDER</span>
         </div>
+        <div class="domain-grid" id="domain-grid"></div>
       </section>
 
-      <section class="process section" id="how-it-works" aria-labelledby="process-title">
-        <div class="container process-inner">
-          <div class="process-intro">
-            <p class="section-kicker">A SIMPLE PROCESS</p>
-            <h2 id="process-title">From interest<br />to ownership<span class="heading-period">.</span></h2>
-            <p>These domains are already registered and offered by their current owner. Each sale is discussed individually.</p>
-          </div>
-          <div class="steps">
-            <div class="step"><span class="step-number">01</span><div><h3>Choose a domain</h3><p>Browse the collection and find a name that works for your idea.</p></div><span class="step-arrow" aria-hidden="true">↗</span></div>
-            <div class="step"><span class="step-number">02</span><div><h3>Make an enquiry</h3><p>Get in touch about pricing and the details of the sale.</p></div><span class="step-arrow" aria-hidden="true">↗</span></div>
-            <div class="step"><span class="step-number">03</span><div><h3>Agree on a transfer</h3><p>Confirm the sale and transfer ownership through a .si registrar.</p></div><span class="step-arrow" aria-hidden="true">↗</span></div>
-          </div>
+      <section class="contact-bar" aria-labelledby="contact-title">
+        <div>
+          <p class="contact-kicker">INTERESTED IN A NAME?</p>
+          <h2 id="contact-title">Let’s talk about it.</h2>
+          <p>Ask about pricing and the ownership transfer.</p>
         </div>
-      </section>
-
-      <section class="contact-section" id="contact" aria-labelledby="contact-title">
-        <div class="container contact-inner">
-          <div>
-            <p class="section-kicker">LET’S TALK NAMES</p>
-            <h2 id="contact-title">Found the right one?</h2>
-            <p>Tell us which domain caught your eye. We’ll discuss the price and next steps with you directly.</p>
-          </div>
-          <button class="button button-light" id="general-enquiry" type="button">Make an enquiry <span aria-hidden="true">↗</span></button>
-        </div>
+        <button class="contact-button" id="general-enquiry" type="button">Make an enquiry <span aria-hidden="true">↗</span></button>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div class="container footer-top">
-        <a class="brand" href="#top" aria-label="SI Select, back to top"><span class="brand-icon" aria-hidden="true">si<span>.</span></span><span class="brand-name">SELECT</span></a>
-        <p>Distinctive names for what’s next.</p>
-        <a href="#top">Back to top ↑</a>
-      </div>
-      <div class="container footer-bottom">
+      <div class="container footer-inner">
         <span>© <span id="year">2026</span> SI Select</span>
-        <span>Domains are available only while unsold.</span>
+        <span>Available only while unsold. Transfers are completed through a .si registrar.</span>
       </div>
     </footer>
 
     <dialog class="enquiry-dialog" id="enquiry-dialog" aria-labelledby="dialog-title">
       <div class="dialog-inner">
         <button class="dialog-close" id="dialog-close" type="button" aria-label="Close enquiry">×</button>
-        <p class="section-kicker">DOMAIN ENQUIRY</p>
-        <h2 id="dialog-title">Let’s talk about <span id="dialog-domain">a domain</span><span class="heading-period">.</span></h2>
-        <p class="dialog-description" id="dialog-description">Reach out to discuss pricing and transfer details with the owner.</p>
+        <p class="dialog-kicker">DOMAIN ENQUIRY</p>
+        <h2 id="dialog-title">Let’s talk about <span id="dialog-domain">a domain</span><span class="period">.</span></h2>
+        <p class="dialog-description">Reach out to discuss pricing and transfer details with the owner.</p>
         <div class="dialog-actions" id="dialog-actions"></div>
         <p class="dialog-note" id="dialog-note"></p>
       </div>

@@ -1,6 +1,6 @@
 # SI Select
 
-A responsive, static marketplace page for eight owner-held `.si` domains. It includes instant search, category filters, domain-specific enquiries, and a simple transfer explanation.
+A responsive, compact marketplace page for eight owner-held `.si` domains. The complete collection and enquiry entry point fit together on one desktop screen; each domain opens a specific enquiry dialog.
 
 ## Local preview
 
