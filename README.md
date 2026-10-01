@@ -10,6 +10,8 @@ From this directory, run `python3 -m http.server 8000` and open `http://localhos
 
 The sales email is set to `k2moat@gmail.com` in `script.js` and the fallback link in `index.html`; change both together if needed. The page has an English/Chinese switch, remembers the chosen language when storage is available, and translates the enquiry email text. Optionally add `contact.whatsapp` at the top of `script.js`.
 
+USDT is shown as an accepted payment method after a price is agreed. The site does not collect payment or display a wallet address; the owner shares the supported network and receiving details with the buyer after the enquiry.
+
 `contact.whatsapp` should be an international number with digits only, without `+` or spaces.
 
 ## Deployment

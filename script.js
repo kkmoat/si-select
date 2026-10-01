@@ -26,22 +26,23 @@ let currentDomain = "";
 const messages = {
   en: {
     title: "SI Select — Curated .si Domains",
-    description: "Eight distinctive .si domains available for acquisition. View the complete collection and enquire directly with the owner.",
-    ogDescription: "Eight distinctive .si domains, one curated collection.",
+    description: "Eight distinctive .si domains available for acquisition. USDT accepted after an agreed quote.",
+    ogDescription: "Eight distinctive .si domains. Price on request; USDT accepted by arrangement.",
     skipLink: "Skip to domains",
     brandLabel: "SI Select, view domains",
     headerCaption: "A CURATED .SI PORTFOLIO",
     getInTouch: "Get in touch",
     eyebrow: "ALL EIGHT NAMES, IN ONE PLACE",
     introTitle: "Find your next",
-    introCopy: "Owner-held domains available for acquisition. Choose a name and enquire about pricing and transfer.",
+    introCopy: "Eight owner-held .si names. Enquire for pricing, USDT payment and transfer.",
     domainCount: "DOMAINS<br>FOR SALE",
     countLabel: "Eight domains available",
     collectionTitle: "The collection",
     sortLabel: "ALPHABETICAL ORDER",
+    paymentLabel: "USDT accepted",
     contactKicker: "INTERESTED IN A NAME?",
     contactTitle: "Let’s talk about it.",
-    contactDetail: " · Ask about pricing and transfer.",
+    contactDetail: " · Ask about price, USDT and transfer.",
     makeEnquiry: "Make an enquiry",
     footerNote: "Available only while unsold. Transfers are completed through a .si registrar.",
     dialogKicker: "DOMAIN ENQUIRY",
@@ -49,6 +50,7 @@ const messages = {
     dialogFallback: "a domain",
     dialogPeriod: ".",
     dialogDescription: "Reach out to discuss pricing and transfer details with the owner.",
+    paymentGuidance: "USDT is accepted after you agree on a price. Confirm the network and receiving address with the owner before sending payment.",
     closeLabel: "Close enquiry",
     cardStatus: "For sale",
     cardPrice: "Price on request",
@@ -59,26 +61,27 @@ const messages = {
     sentNote: "Your email or messaging app will open. No message is sent automatically.",
     pendingNote: "The sales contact is being set up. Enquiries cannot be sent from this page yet.",
     subjectGeneral: "Enquiry about .si domains",
-    bodyGeneral: "Hello, I am interested in your .si domain portfolio. Please share pricing and transfer details.",
+    bodyGeneral: "Hello, I am interested in your .si domain portfolio. Please share pricing, the supported USDT network, and transfer details.",
   },
   zh: {
     title: "SI Select — 精选 .si 域名",
-    description: "8 个精选 .si 域名出售中。浏览完整列表，直接向持有人咨询价格与过户方式。",
-    ogDescription: "8 个精选 .si 域名，一页尽览。",
+    description: "8 个精选 .si 域名出售中，价格面议；确认报价后可使用 USDT 付款。",
+    ogDescription: "8 个精选 .si 域名，一页尽览；价格面议，支持 USDT。",
     skipLink: "跳转到域名列表",
     brandLabel: "SI Select，查看域名",
     headerCaption: "精选 .SI 域名",
     getInTouch: "联系咨询",
     eyebrow: "8 个域名 · 全部在此",
     introTitle: "找到你的下一个",
-    introCopy: "8 个自有 .si 域名正在出售。选择感兴趣的名称，咨询价格与过户事宜。",
+    introCopy: "8 个自有 .si 域名，价格面议；支持 USDT 付款与注册商过户。",
     domainCount: "域名<br>出售中",
     countLabel: "8 个域名正在出售",
     collectionTitle: "域名列表",
     sortLabel: "按字母排序",
+    paymentLabel: "支持 USDT",
     contactKicker: "看中了某个域名？",
     contactTitle: "聊聊你的想法。",
-    contactDetail: " · 咨询报价和过户方式。",
+    contactDetail: " · 咨询报价、USDT 付款和过户。",
     makeEnquiry: "发送询盘",
     footerNote: "售出即下架；域名过户由 .si 注册商办理。",
     dialogKicker: "域名询盘",
@@ -86,6 +89,7 @@ const messages = {
     dialogFallback: "域名",
     dialogPeriod: "",
     dialogDescription: "邮件联系持有人，了解报价和域名过户详情。",
+    paymentGuidance: "支持 USDT 付款。请先与持有人确认价格、收款网络和地址，再进行转账。",
     closeLabel: "关闭询盘",
     cardStatus: "出售中",
     cardPrice: "价格面议",
@@ -96,7 +100,7 @@ const messages = {
     sentNote: "将打开邮件或通讯应用；网页不会自动发送消息。",
     pendingNote: "销售联系方式仍在设置中，暂时无法从本页发送询盘。",
     subjectGeneral: "咨询 .si 域名",
-    bodyGeneral: "您好，我想了解您出售的 .si 域名。请提供报价和过户方式。",
+    bodyGeneral: "您好，我想了解您出售的 .si 域名。请提供报价、支持的 USDT 网络和过户方式。",
   },
 };
 
@@ -153,12 +157,12 @@ renderLanguage();
 function inquiryText() {
   if (language === "zh") {
     return currentDomain
-      ? `您好，我对 ${currentDomain} 感兴趣。请提供报价和过户方式。`
+      ? `您好，我对 ${currentDomain} 感兴趣。请提供报价、支持的 USDT 网络和过户方式。`
       : messages.zh.bodyGeneral;
   }
   return currentDomain
-    ? `Hello, I am interested in ${currentDomain}. Please share the asking price and transfer details.`
-    : "Hello, I am interested in your .si domain portfolio. Please share pricing and transfer details.";
+    ? `Hello, I am interested in ${currentDomain}. Please share the asking price, supported USDT network, and transfer details.`
+    : messages.en.bodyGeneral;
 }
 
 function addAction(label, href, secondary = false) {
@@ -235,6 +239,7 @@ if (cursor) {
     cursor.style.transform = `translate3d(${event.clientX}px, ${event.clientY}px, 0) translate(-50%, -50%)`;
     cursor.classList.add("is-visible");
     cursor.classList.toggle("is-active", event.target instanceof Element && event.target.closest("a, button") !== null);
+    cursor.classList.toggle("on-dark", event.target instanceof Element && event.target.closest(".contact-bar") !== null);
   }, { passive: true });
   const hideCursor = () => cursor.classList.remove("is-visible");
   document.addEventListener("pointerleave", hideCursor);
