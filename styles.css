@@ -34,7 +34,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .language-toggle:hover { border-color: var(--ink); color: var(--ink); }
 .header-contact { display: inline-flex; align-items: center; gap: 16px; min-height: 39px; padding: 0 14px; border: 1px solid var(--line); border-radius: 3px; background: transparent; color: var(--ink); font-size: 13px; font-weight: 750; transition: background .18s ease, color .18s ease, border-color .18s ease; }
 .header-contact:hover { border-color: var(--ink); background: var(--ink); color: var(--paper); }
-.header-contact span { font-size: 17px; font-weight: 400; }
+.header-contact > [aria-hidden="true"] { font-size: 17px; font-weight: 400; }
 
 .main-content { flex: 1 0 auto; display: flex; flex-direction: column; justify-content: center; gap: clamp(12px, 2vh, 22px); padding-block: clamp(12px, 2vh, 28px); }
 .intro { display: flex; align-items: end; justify-content: space-between; gap: 24px; }
@@ -71,7 +71,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .contact-bar p a:hover { color: var(--ink); }
 .contact-button { min-height: 43px; display: inline-flex; align-items: center; justify-content: space-between; gap: 19px; flex: 0 0 auto; padding: 0 16px; border: 0; border-radius: 2px; background: var(--ink); color: var(--paper); font-size: 13px; font-weight: 800; transition: background .18s ease, transform .18s ease; }
 .contact-button:hover { background: #ffffff; transform: translateY(-1px); }
-.contact-button span { font-size: 18px; font-weight: 400; }
+.contact-button > [aria-hidden="true"] { font-size: 18px; font-weight: 400; }
 .site-footer { flex: 0 0 auto; border-top: 1px solid var(--line); }
 .footer-inner { min-height: 41px; display: flex; align-items: center; justify-content: space-between; gap: 20px; color: var(--muted); font-size: 11px; font-weight: 650; }
 
