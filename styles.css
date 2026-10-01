@@ -86,7 +86,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .enquiry-dialog h2 { margin: 0 0 14px; font-size: clamp(32px, 5vw, 45px); line-height: 1.07; letter-spacing: -.06em; overflow-wrap: anywhere; }
 .period { color: var(--accent); }
 .dialog-description { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.55; }
-.payment-guidance { margin: 16px 0 0; padding: 12px 14px; border: 1px solid #c5e7dc; border-radius: 11px; background: #edf9f3; color: #285a57; font-size: 13px; line-height: 1.5; }
 .dialog-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
 .dialog-action { min-height: 43px; display: inline-flex; align-items: center; justify-content: center; padding: 0 15px; border: 1px solid var(--accent); border-radius: 10px; background: var(--accent); color: var(--white); font-size: 13px; font-weight: 750; }
 .dialog-action:hover { background: #066e69; }
