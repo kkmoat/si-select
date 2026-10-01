@@ -113,12 +113,12 @@ function renderGrid() {
   const t = messages[language];
   grid.innerHTML = domains.map((name, index) => {
     const label = name.slice(0, -3);
-    const cardLabel = language === "zh" ? `咨询 ${name}` : `Enquire about ${name}`;
-    return `<button class="domain-card" type="button" data-inquire="${name}" aria-label="${cardLabel}">
+    const cardLabel = language === "zh" ? `打开 ${name}` : `Visit ${name}`;
+    return `<a class="domain-card" href="https://${name}/" aria-label="${cardLabel}">
       <span class="card-top"><span class="card-number">${String(index + 1).padStart(2, "0")} / 08</span><span class="card-availability">${t.cardStatus}</span></span>
       <span class="domain-name">${label}<span class="tld">.si</span></span>
       <span class="card-bottom"><span class="card-price">${t.cardPrice}</span><span class="card-arrow" aria-hidden="true">↗</span></span>
-    </button>`;
+    </a>`;
   }).join("");
 }
 
@@ -215,10 +215,6 @@ function openEnquiry(domain = "") {
   dialog.showModal();
 }
 
-grid.addEventListener("click", (event) => {
-  const card = event.target.closest("[data-inquire]");
-  if (card) openEnquiry(card.dataset.inquire);
-});
 document.getElementById("language-toggle").addEventListener("click", () => {
   language = language === "zh" ? "en" : "zh";
   try { window.localStorage.setItem("si-select-language", language); } catch { /* Keep the selected language for this visit. */ }
