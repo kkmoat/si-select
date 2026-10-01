@@ -8,7 +8,7 @@ From this directory, run `python3 -m http.server 8000` and open `http://localhos
 
 ## Configure enquiries
 
-The sales email is set to `gvinteir@gmail.com` in `script.js`, and is also shown in the contact section. Change both places together if the sales address changes. Optionally add `contact.whatsapp` at the top of `script.js`.
+The sales email is set to `k2moat@gmail.com` in `script.js` and the fallback link in `index.html`; change both together if needed. The page has an English/Chinese switch, remembers the chosen language when storage is available, and translates the enquiry email text. Optionally add `contact.whatsapp` at the top of `script.js`.
 
 `contact.whatsapp` should be an international number with digits only, without `+` or spaces.
 

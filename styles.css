@@ -29,6 +29,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .brand-icon span { color: var(--ink); }
 .brand-name { font-size: 14px; font-weight: 800; letter-spacing: .24em; }
 .header-caption { color: var(--muted); font-size: 11px; font-weight: 800; letter-spacing: .19em; }
+.header-actions { display: flex; align-items: center; gap: 10px; }
+.language-toggle { min-width: 45px; min-height: 39px; padding: 0 9px; border: 1px solid var(--line); border-radius: 3px; background: transparent; color: var(--muted); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; font-weight: 700; transition: color .18s ease, border-color .18s ease; }
+.language-toggle:hover { border-color: var(--ink); color: var(--ink); }
 .header-contact { display: inline-flex; align-items: center; gap: 16px; min-height: 39px; padding: 0 14px; border: 1px solid var(--line); border-radius: 3px; background: transparent; color: var(--ink); font-size: 13px; font-weight: 750; transition: background .18s ease, color .18s ease, border-color .18s ease; }
 .header-contact:hover { border-color: var(--ink); background: var(--ink); color: var(--paper); }
 .header-contact span { font-size: 17px; font-weight: 400; }
@@ -64,6 +67,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .contact-kicker { margin-bottom: 5px; color: var(--muted); }
 .contact-bar h2 { margin: 0; font-size: 25px; line-height: 1.15; font-weight: 740; letter-spacing: -.045em; }
 .contact-bar p:last-child { margin: 4px 0 0; color: var(--muted); font-size: 13px; line-height: 1.4; }
+.contact-bar p a { text-decoration: underline; text-decoration-color: #606a67; text-underline-offset: 3px; }
+.contact-bar p a:hover { color: var(--ink); }
 .contact-button { min-height: 43px; display: inline-flex; align-items: center; justify-content: space-between; gap: 19px; flex: 0 0 auto; padding: 0 16px; border: 0; border-radius: 2px; background: var(--ink); color: var(--paper); font-size: 13px; font-weight: 800; transition: background .18s ease, transform .18s ease; }
 .contact-button:hover { background: #ffffff; transform: translateY(-1px); }
 .contact-button span { font-size: 18px; font-weight: 400; }
@@ -103,6 +108,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .brand-icon { width: 34px; height: 34px; font-size: 20px; border-radius: 2px; }
   .brand-name { font-size: 11px; }
   .header-caption { display: none; }
+  .header-actions { gap: 7px; }
+  .language-toggle { min-height: 34px; min-width: 40px; font-size: 11px; }
   .header-contact { min-height: 34px; padding-inline: 10px; font-size: 12px; gap: 8px; }
   .main-content { gap: 12px; padding-block: 12px; }
   .intro { align-items: start; }
@@ -131,7 +138,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 @media (max-width: 370px) {
   .domain-name { font-size: 17px; }
-  .header-contact { font-size: 11px; }
+  .header-contact { display: none; }
   .intro h1 { font-size: 32px; }
   .contact-bar h2 { font-size: 17px; }
 }
