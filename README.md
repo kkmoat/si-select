@@ -1,6 +1,6 @@
 # SI Select
 
-A responsive, compact marketplace page for eight owner-held `.si` domains. The complete collection and enquiry entry point fit together on one desktop screen; each domain card links directly to its corresponding website.
+A responsive, compact marketplace page for twelve owner-held `.si` domains. The complete collection and enquiry entry point fit together on one desktop screen; each domain card links directly to its corresponding website.
 
 ## Local preview
 

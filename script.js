@@ -6,9 +6,13 @@ const contact = {
 const domains = [
   "avtv.si",
   "bitstock.si",
+  "botio.si",
   "buysi.si",
   "defipay.si",
+  "ionise.si",
+  "leat.si",
   "qbz.si",
+  "qqvi.si",
   "qvr.si",
   "rwapay.si",
   "zfi.si",
@@ -26,17 +30,17 @@ let currentDomain = "";
 const messages = {
   en: {
     title: "SI Select — Curated .si Domains",
-    description: "Eight distinctive .si domains available for acquisition. USDT accepted after an agreed quote.",
-    ogDescription: "Eight distinctive .si domains. Price on request; USDT accepted by arrangement.",
+    description: "Twelve distinctive .si domains available for acquisition. USDT accepted after an agreed quote.",
+    ogDescription: "Twelve distinctive .si domains. Price on request; USDT accepted by arrangement.",
     skipLink: "Skip to domains",
     brandLabel: "SI Select, view domains",
     headerCaption: "A CURATED .SI PORTFOLIO",
     getInTouch: "Get in touch",
-    eyebrow: "ALL EIGHT NAMES, IN ONE PLACE",
+    eyebrow: "ALL TWELVE NAMES, IN ONE PLACE",
     introTitle: "Find your next",
-    introCopy: "Eight owner-held .si names. Enquire for pricing, USDT payment and transfer.",
+    introCopy: "Twelve owner-held .si names. Enquire for pricing, USDT payment and transfer.",
     domainCount: "DOMAINS<br>FOR SALE",
-    countLabel: "Eight domains available",
+    countLabel: "Twelve domains available",
     collectionTitle: "The collection",
     sortLabel: "ALPHABETICAL ORDER",
     paymentLabel: "USDT accepted",
@@ -64,17 +68,17 @@ const messages = {
   },
   zh: {
     title: "SI Select — 精选 .si 域名",
-    description: "8 个精选 .si 域名出售中，价格面议；确认报价后可使用 USDT 付款。",
-    ogDescription: "8 个精选 .si 域名，一页尽览；价格面议，支持 USDT。",
+    description: "12 个精选 .si 域名出售中，价格面议；确认报价后可使用 USDT 付款。",
+    ogDescription: "12 个精选 .si 域名，一页尽览；价格面议，支持 USDT。",
     skipLink: "跳转到域名列表",
     brandLabel: "SI Select，查看域名",
     headerCaption: "精选 .SI 域名",
     getInTouch: "联系咨询",
-    eyebrow: "8 个域名 · 全部在此",
+    eyebrow: "12 个域名 · 全部在此",
     introTitle: "找到你的下一个",
-    introCopy: "8 个自有 .si 域名，价格面议；支持 USDT 付款与注册商过户。",
+    introCopy: "12 个自有 .si 域名，价格面议；支持 USDT 付款与注册商过户。",
     domainCount: "域名<br>出售中",
-    countLabel: "8 个域名正在出售",
+    countLabel: "12 个域名正在出售",
     collectionTitle: "域名列表",
     sortLabel: "按字母排序",
     paymentLabel: "支持 USDT",
@@ -115,7 +119,7 @@ function renderGrid() {
     const label = name.slice(0, -3);
     const cardLabel = language === "zh" ? `打开 ${name}` : `Visit ${name}`;
     return `<a class="domain-card" href="https://${name}/" aria-label="${cardLabel}">
-      <span class="card-top"><span class="card-number">${String(index + 1).padStart(2, "0")} / 08</span><span class="card-availability">${t.cardStatus}</span></span>
+      <span class="card-top"><span class="card-number">${String(index + 1).padStart(2, "0")} / ${String(domains.length).padStart(2, "0")}</span><span class="card-availability">${t.cardStatus}</span></span>
       <span class="domain-name">${label}<span class="tld">.si</span></span>
       <span class="card-bottom"><span class="card-price">${t.cardPrice}</span><span class="card-arrow" aria-hidden="true">↗</span></span>
     </a>`;
